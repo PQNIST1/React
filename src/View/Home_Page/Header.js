@@ -37,7 +37,7 @@ class Header extends Component {
             </div>
             <div className="header-body row">
               <div className="col-3"></div>
-              <div className="header-body-left col-7">
+              <div className="header-body-left col-8">
                 <button type="button" class="btn text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ class Header extends Component {
               </div>
             </div>
             <div className="content-between row">
-              {/* <div className="col-3"></div> */}
+              <div className="col-3"></div>
               <div className="content-box col-6">
                 <div className="box-search form-group search-input">
                   <svg
@@ -113,20 +113,8 @@ class Header extends Component {
                   </svg>
                   <input type="text" placeholder="Bạn muốn đến đâu ?" />
                 </div>
-                <div className="box-calendar form-group calendar-input">
-                  <i class="far fa-calendar-check"></i>
-                  <input
-                    type="text"
-                    placeholder="Ngày nhận / Trả phòng..."
-                    readOnly
-                    onClick={() => this.handleClickOnShowCalendar()}
-                  />
-                  {this.state.isCalendarVisible && (
-                    <div className="calendar-container">
-                      <CalendarComponent />
-                    </div>
-                  )}
-                </div>
+                <div className="box-calendar"></div>
+                <div className="box-person"></div>
               </div>
             </div>
           </div>
