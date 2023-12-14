@@ -8,7 +8,7 @@ import Info from "./View/User_Info/Info";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Info />
+    <App />
   </React.StrictMode>
 );
 
