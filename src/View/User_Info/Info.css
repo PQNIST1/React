@@ -2,3 +2,61 @@
   margin: 0;
   padding: 0;
 }
+.info-container .user-info{
+  margin-top: 10px;
+  box-sizing: border-box;
+
+}
+.user-info .text{
+  padding-top: 5px;
+  border-bottom: 1px solid gainsboro ;
+}
+.user-info .avatar{
+  width: 85px;
+  height: 85px;
+  border-bottom: 1px solid gainsboro ;
+}
+.avatar button{
+  background: none;
+  border: none;
+  width: 85px;
+  height: 85px;
+
+}
+.avatar img {
+  width: 70px;
+  height: 70px;
+}
+.info-container .user-name {
+  margin-top: 20px;
+}
+.user-name .text-1{
+  border-bottom: 1px solid gainsboro ;
+}
+.user-name .text-2{
+  border-bottom: 1px solid gainsboro ;
+}
+.user-name .text-3{
+  border-bottom: 1px solid gainsboro ;
+}
+.user-name button{
+ margin-left: 65px;
+  background: none;
+  border: none;
+  color: #006ce5;
+  font-weight: bold;
+}
+.user-name .text-4 {
+  margin-left: 35px ;
+}
+.text-4 .but-1 {
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: #006ce5;
+  margin-bottom: 10px;
+}
+.text-4 .but-2{
+  margin-bottom: 30px;
+}
