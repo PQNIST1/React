@@ -3,7 +3,53 @@
   height: 490px;
   padding: 0;
   position: relative;
+  .content-between {
+    height: 140px;
+    display: flex;
+    margin-top: 51px;
 
+    .content-box {
+      height: 60px;
+      border-radius: 15px;
+      padding-left: 5px;
+      padding-right: 5px;
+      z-index: 2;
+      position: absolute;
+      top: 330px;
+      left: 375px;
+      background-color: #ffb700;
+      // border: 5px solid #ffb700;
+      color: black;
+
+      input {
+        background: transparent;
+        border: none;
+        outline: none;
+        // border: 1px solid red;
+      }
+
+      i {
+        padding: 5px;
+      }
+
+      .box-search {
+        width: 300px;
+        height: 50px;
+        margin: 5px 0;
+        padding: 12px;
+        background-color: white;
+        border-radius: 10px;
+      }
+      .box-calendar {
+        width: 12px;
+        background-color: white;
+      }
+      .box-person {
+        width: 13px;
+        background-color: white;
+      }
+    }
+  }
   .header-content {
     color: white;
 
@@ -15,6 +61,7 @@
       .header-top-left {
         font-size: 30px;
         padding-bottom: 14px;
+        
       }
 
       .header-top-right {
@@ -69,51 +116,6 @@
           padding-left: 20px;
         }
       }
-      .content-between {
-        height: 140px;
-        display: flex;
-        margin-top: 51px;
-
-        .content-box {
-          height: 60px;
-          border-radius: 15px;
-          padding-left: 5px;
-          padding-right: 5px;
-          z-index: 2;
-          background-color: #ffb700;
-          // border: 5px solid #ffb700;
-          color: black;
-
-          input {
-            background: transparent;
-            border: none;
-            outline: none;
-            // border: 1px solid red;
-          }
-
-          i {
-            padding: 5px;
-          }
-
-          .box-search {
-            width: 300px;
-            height: 50px;
-            margin: 5px 0;
-            padding: 12px;
-            background-color: white;
-            border-radius: 10px;
-          }
-          .box-calendar {
-            width: 12px;
-            background-color: white;
-          }
-          .box-person {
-            width: 13px;
-            background-color: white;
-          }
-        }
-      }
-
       .content-down {
         background-color: white;
         height: 134px;
