@@ -1,12 +1,14 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
 .header-container {
   background-color: #003b95;
   height: 490px;
   padding: 0;
   position: relative;
   .content-between {
-    height: 140px;
+    // height: 140px;
     display: flex;
-    margin-top: 51px;
+    // margin-top: 51px;
 
     .content-box {
       height: 60px;
@@ -16,10 +18,11 @@
       z-index: 2;
       position: absolute;
       top: 330px;
-      left: 375px;
+      left: 25%;
       background-color: #ffb700;
       // border: 5px solid #ffb700;
       color: black;
+      display: flex;
 
       input {
         background: transparent;
@@ -28,8 +31,9 @@
         // border: 1px solid red;
       }
 
-      i {
-        padding: 5px;
+      svg {
+        padding-bottom: 3px;
+        padding-right: 3px;
       }
 
       .box-search {
@@ -41,8 +45,25 @@
         border-radius: 10px;
       }
       .box-calendar {
-        width: 12px;
+        width: 240px;
+        height: 50px;
+        margin: 5px 3px;
+        padding: 12px;
         background-color: white;
+        border-radius: 10px;
+        i {
+          padding-right: 5px;
+        }
+
+        input {
+          cursor: pointer;
+        }
+
+        .e-calendar {
+          margin-top: 20px;
+          width: 615px;
+          max-width: none;
+        }
       }
       .box-person {
         width: 13px;
@@ -61,7 +82,6 @@
       .header-top-left {
         font-size: 30px;
         padding-bottom: 14px;
-        
       }
 
       .header-top-right {
@@ -100,11 +120,15 @@
         i {
           padding: 5px;
         }
+
+        svg {
+          padding-bottom: 3px;
+          padding-right: 3px;
+        }
       }
     }
 
     .header-bot {
-      height: 429px;
       .content-up {
         padding-top: 50px;
 
