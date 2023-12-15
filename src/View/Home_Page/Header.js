@@ -37,7 +37,7 @@ class Header extends Component {
             </div>
             <div className="header-body row">
               <div className="col-3"></div>
-              <div className="header-body-left col-7">
+              <div className="header-body-left col-8">
                 <button type="button" class="btn text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
