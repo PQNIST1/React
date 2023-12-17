@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Header from "./Home_Page/Header";
 import Info from "./User_Info/Info"
+import Booking from "./Booking/Booking";
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
           <Switch>
             <Route path="/info" exact>
               <Info />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/booking" exact>
+              <Booking />
             </Route>
           </Switch>
         </header>

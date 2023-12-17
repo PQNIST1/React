@@ -3,7 +3,7 @@ export const UserData = [{
     email: "nguyenpham23476@gmail.com",
     password: "1234567",
     phone: "0362696258",
-    date: "20-08-2003",
+    date:new Date("2003-08-20"),
     gender: "Nam",
     address: "Gia lai"
 }]
