@@ -6,6 +6,7 @@ import Header from "./Home_Page/Header";
 import Info from "./User_Info/Info"
 import Booking from "./Booking/Booking";
 import MyDatePicker from "./clendar/clendar";
+import DeleteBooking from "./Booking/Delete_Booking";
 
 
 function App() {
@@ -31,6 +32,11 @@ function App() {
           <Switch>
             <Route path="/clendar" exact>
               <MyDatePicker/>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/booking/detail" exact>
+              <DeleteBooking/>
             </Route>
           </Switch>
         </header>
