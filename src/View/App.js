@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./Home_Page/Header";
 import Info from "./User_Info/Info"
 import Booking from "./Booking/Booking";
+import MyDatePicker from "./clendar/clendar";
+
 
 function App() {
   return (
@@ -24,6 +26,11 @@ function App() {
           <Switch>
             <Route path="/booking" exact>
               <Booking />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/clendar" exact>
+              <MyDatePicker/>
             </Route>
           </Switch>
         </header>
