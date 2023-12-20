@@ -1,0 +1,17 @@
+.home-container4 {
+  padding-top: 50px;
+  .home-content4 {
+    height: 240px;
+
+    .col-with-bg {
+      background: url("../../../src/assets/images/292129389.jpeg") center/cover
+        no-repeat;
+      border-radius: 10px;
+    }
+    .font-weight-bold {
+      font-size: 25px;
+      color: white;
+      padding: 15px;
+    }
+  }
+}

@@ -1,18 +1,67 @@
 import React, { Component } from "react";
-import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+// import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 
 import "./Header.scss";
 
 class Header extends Component {
   state = {
     isCalendarVisible: false,
+    isAttributesVisible: false,
   };
 
   handleClickOnShowCalendar = () => {
     this.setState({
-      isCalendarVisible: true,
+      isCalendarVisible: !this.state.isCalendarVisible,
     });
   };
+
+  handleClickHideCalendar = () => {
+    this.setState({
+      isCalendarVisible: false,
+    });
+  };
+
+  handleClickShowAttributes = (e) => {
+    e.stopPropagation();
+    this.setState({
+      isAttributesVisible: true,
+    });
+  };
+
+  handleClickHideAttributes = () => {
+    this.setState({
+      isAttributesVisible: false,
+    });
+  };
+
+  componentDidMount() {
+    document.addEventListener("click", this.handleClickHideCalendar);
+    document.addEventListener("click", this.handleClickHideAttributes);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("click", this.handleClickHideCalendar);
+    document.removeEventListener("click", this.handleClickHideAttributes);
+  }
+
+  renderAttributesList() {
+    const attributes = ["Đà Nẵng", "Hội An", "Huế", "Đà Lạt", "Nha Trang"];
+
+    return (
+      <ul className="list-group">
+        <li className="list-group-item font-weight-bold">
+          Các địa điểm được ưa thích gần đây
+        </li>
+        {attributes.map((attribute, index) => (
+          <li key={index} className="list-group-item">
+            <i class="fas fa-map-marker-alt"></i>
+            {attribute}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <>
@@ -37,7 +86,7 @@ class Header extends Component {
             </div>
             <div className="header-body row">
               <div className="col-3"></div>
-              <div className="header-body-left col-7">
+              <div className="header-body-left col-6">
                 <button type="button" class="btn text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +150,10 @@ class Header extends Component {
             <div className="content-between row">
               {/* <div className="col-3"></div> */}
               <div className="content-box col-6">
-                <div className="box-search form-group search-input">
+                <div
+                  className="box-search form-group search-input"
+                  onClick={this.handleClickShowAttributes}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -113,19 +165,34 @@ class Header extends Component {
                   </svg>
                   <input type="text" placeholder="Bạn muốn đến đâu ?" />
                 </div>
+                {this.state.isAttributesVisible && (
+                  <div
+                    className="custom-card"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div className="card-body">
+                      {this.renderAttributesList()}
+                    </div>
+                  </div>
+                )}
                 <div className="box-calendar form-group calendar-input">
-                  <i class="far fa-calendar-check"></i>
+                  {/* <i class="far fa-calendar-check"></i> */}
                   <input
-                    type="text"
+                    type="date"
                     placeholder="Ngày nhận / Trả phòng..."
-                    readOnly
-                    onClick={() => this.handleClickOnShowCalendar()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      this.handleClickOnShowCalendar();
+                    }}
                   />
                   {this.state.isCalendarVisible && (
-                    <div className="calendar-container">
-                      <CalendarComponent />
-                    </div>
+                    <div className="calendar-container"></div>
                   )}
+                </div>
+                <div className="box-reservation">
+                  <button type="button" class="btn btn-primary">
+                    Tìm
+                  </button>
                 </div>
               </div>
             </div>

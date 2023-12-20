@@ -1,0 +1,57 @@
+.home-container7 {
+  height: 550px;
+  padding-top: 50px;
+  //   background-color: aqua;
+
+  .slick-list {
+    // background: #fff;
+    margin: 0 auto;
+    width: 1138px;
+    // width: 90%;
+  }
+
+  .slick-slider {
+    // margin-bottom: 50px;
+    // width: 700px;
+  }
+
+  .slick-prev {
+    background: blue !important;
+    // position: relative !important;
+    left: 0 !important;
+    z-index: 200;
+  }
+  .slick-next {
+    background: red !important;
+    right: 0 !important;
+    z-index: 200;
+  }
+
+  .home-body {
+    height: 206px;
+    // border: 1px solid red;
+
+    .back-ground {
+      height: 202px;
+      background-image: url(../../assets/images/292129389.jpeg);
+    }
+
+    .card6 {
+      height: 450px;
+      width: 99% !important;
+
+      .card-body {
+        padding: 0.5rem !important;
+
+        .button6 {
+          padding-right: 5px;
+        }
+
+        .price {
+          padding-top: 5px;
+          float: right;
+        }
+      }
+    }
+  }
+}

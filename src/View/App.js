@@ -2,7 +2,9 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Header from "./Home_Page/Header";
+import Info from "./User_Info/Info";
+
+import Home_Page from "./Home_Page/Home_Page";
 
 function App() {
   return (
@@ -11,7 +13,12 @@ function App() {
         <header className="App-header">
           <Switch>
             <Route path="/" exact>
-              <Header />
+              <Home_Page />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/info">
+              <Info />
             </Route>
           </Switch>
         </header>
