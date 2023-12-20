@@ -4,6 +4,9 @@ import UserGender from './Gender';
 import './Info.css'
 import UserInfo from './UserInfo'
 import { UserData } from './data';
+import UserAddress from './user_address';
+import UserEmail from './user_email';
+import UserPhone from './user_phone';
 
 
 export default function Info() {
@@ -19,16 +22,16 @@ export default function Info() {
                         <p>Cập nhật thông tin của bạn và tìm hiểu các thông tin này được sử dụng ra sao.</p>
                     </div> 
                     <div className='col-1 avatar p-0'>
-                        <button type="button"><img src='https://q-xx.bstatic.com/xdata/images/xphoto/square128/296828436.jpg?k=accd6bfd812eb8dcd6c2449c3720ea5538cb5ac84d20c7cde972329c73d3a003&amp;o='></img></button>
+                        <button type="button"><img src='https://q-xx.bstatic.com/xdata/images/xphoto/square128/296828436.jpg?k=accd6bfd812eb8dcd6c2449c3720ea5538cb5ac84d20c7cde972329c73d3a003&amp;o=' alt=''></img></button>
                     </div>
                 </div>
                <UserInfo title="Tên" value={data.name}/>
-               <UserInfo title="Email" value={data.email}/>
+               <UserEmail title="Email" value={data.email}/>
                <UserInfo title="Mật khẩu" value={data.password}/>
-               <UserInfo title="Số điện thoại" value={data.phone}/>
+               <UserPhone title="Số điện thoại" value={data.phone}/>
                <UserDate title="Ngày sinh" value={data.date}/>
                <UserGender title="Giới tính" value={data.gender}/>
-               <UserInfo title="Địa chỉ" value={data.address}/>
+               <UserAddress title="Địa chỉ" value={data.address}/>
             </div>
         </div>
     </> 

@@ -7,6 +7,7 @@ import Info from "./User_Info/Info"
 import Booking from "./Booking/Booking";
 import MyDatePicker from "./clendar/clendar";
 import DeleteBooking from "./Booking/Delete_Booking";
+import Payment from "./Payment/Payment";
 
 
 function App() {
@@ -37,6 +38,11 @@ function App() {
           <Switch>
             <Route path="/booking/detail" exact>
               <DeleteBooking/>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/booking/payment" exact>
+              <Payment/>
             </Route>
           </Switch>
         </header>

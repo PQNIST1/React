@@ -11,7 +11,7 @@ export default function DeleteBooking() {
                     <div className="content">
                         <div className="detail">
                             <div className="name">
-                                <a href=""><h5>Khách sạn Hương Bình</h5></a>
+                                <a href="" ><h5>Khách sạn Hương Bình</h5></a>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>

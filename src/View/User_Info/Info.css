@@ -60,3 +60,11 @@
 .text-4 .but-2{
   margin-bottom: 30px;
 }
+.text-2 input{
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  width: 50%;
+}
+.text-2 .phone-input{
+  width: 50%;
+}
