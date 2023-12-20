@@ -1,0 +1,132 @@
+
+.delete-booking {
+    padding: 0;
+    margin: 0;
+    height: 690px;
+    background-color: whitesmoke;
+}
+.delete-booking h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.delete-content .content {
+    display: flex;
+}
+.content .detail {
+    width: 65%;
+    border-radius: 10px;
+    height: 500px;
+    background-color: white;
+    box-sizing: border-box;
+}
+.detail .name {
+    display: flex;
+    padding-top: 1px;
+    padding-left: 15px;
+}
+.name i {
+    padding-top: 25px;
+    padding-left: 5px;
+    color: orange;
+}
+.name .choise {
+    display: flex;
+    margin-left: 5px;
+    margin-top: 20px;
+    background-color: orange;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+}
+.choise i{
+    margin-top: 3px;
+    margin-left: 5px;
+    padding: 0;
+    color: aliceblue;
+}
+.detail .title {
+    display: flex;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    height: 20px;
+}
+.title h6{
+    width: 20%;
+    margin-right: 120px;
+}
+.detail .vat{
+    display: flex;
+    margin-left: 25px;
+    margin-top: 30px;
+}
+.vat .vat-title{
+    width: 50%;
+}
+.vat p {
+    margin: 0;
+}
+.vat .vat-detail {
+    width: 50%;
+    text-align: right;
+    margin-right: 25px;
+}
+.detail .price {
+    display: flex;
+    width: 96%;
+    height: 50px;
+    background-color: rgb(219, 242, 254);
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+.price .price-l {
+    width: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.price h5{
+    margin: 0;
+    color: rgb(15, 15, 197);
+   
+}
+.price .price-r{
+    width: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+.detail .note{
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: left;
+}
+.note p{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+.content .del{
+    width: 25%;
+    height: 500px;
+    margin-left: 10px;
+    text-align: left;
+}
+.del h6{
+    margin-top: 30px;
+}
+.del p{
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.del .action{
+    margin-top: 10px;
+}
+.action i{
+    margin-right: 5px   ;
+}
+.action a:hover{
+    color: black;
+}

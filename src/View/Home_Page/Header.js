@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
-
+import MyDatePicker from "./clendar/clendar";
 import "./Header.scss";
 
 class Header extends Component {
@@ -177,14 +176,7 @@ class Header extends Component {
                 )}
                 <div className="box-calendar form-group calendar-input">
                   {/* <i class="far fa-calendar-check"></i> */}
-                  <input
-                    type="date"
-                    placeholder="Ngày nhận / Trả phòng..."
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      this.handleClickOnShowCalendar();
-                    }}
-                  />
+                  <MyDatePicker />
                   {this.state.isCalendarVisible && (
                     <div className="calendar-container"></div>
                   )}

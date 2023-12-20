@@ -5,6 +5,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Info from "./User_Info/Info";
 
 import Home_Page from "./Home_Page/Home_Page";
+import Booking from "./Booking/Booking";
+import DeleteBooking from "./Booking/Delete_Booking";
+import Payment from "./Payment/Payment";
 
 function App() {
   return (
@@ -19,6 +22,27 @@ function App() {
           <Switch>
             <Route path="/info">
               <Info />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/info">
+              <Info />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/booking">
+              <Booking />
+            </Route>
+          </Switch>
+
+          <Switch>
+            <Route path="/booking/detail">
+              <DeleteBooking />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/booking/payment">
+              <Payment />
             </Route>
           </Switch>
         </header>

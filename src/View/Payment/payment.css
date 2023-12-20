@@ -1,0 +1,286 @@
+.payment {
+    padding: 0;
+    margin: 0;
+}
+.payment .payment-content{
+    margin-top: 30px;
+    display: flex;
+}
+.payment-content .left-content {
+    width: 32%;
+    height: 300px;
+}
+.payment-content .right-content {
+    margin-left: 30px;
+    width: 65%;
+    height: 1000px;
+}
+.left-content .hotel-content{
+    width: 100%;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+.hotel-content .icon{
+    display: flex;
+    margin-top: 7px;
+    height: 20px;
+}
+.icon i{
+    font-size: 10px;
+    color: orange;
+    padding-left: 1px;
+    padding-top: 8px;
+}
+.icon p{
+    font-size: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.icon .like{
+    background-color: orange;
+    border-radius: 5px;
+    width: 35px;
+    height: 20px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon .like i{
+    color: aliceblue;
+    padding: 0;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+.hotel-content h6{
+    margin-top: 5px
+}
+.hotel-content p{
+    font-size: 13px;
+    margin-right: 15px;
+}
+.icon p{
+    padding: 0;
+    margin: 0;
+    margin-right: 3px;
+}
+.hotel-content .service{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+}
+.service .box{
+    display: flex;   
+}
+.left-content .time-booking{
+    margin-top: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.time-booking .time{
+    display: flex;
+    width: 100%;
+}
+.time .time-l{
+    width: 50%;
+    border-right: 1px solid gainsboro;
+}
+.time .time-r{
+    margin-left: 10px;
+}
+.time-booking p{
+    padding: 0;
+    margin: 0;
+}
+.left-content .hotel-price{
+    margin-top: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+.hotel-price p{
+    padding: 0;
+    margin: 0;
+}
+.hotel-price .price-content{
+    display: flex;
+    padding-left: 15px;
+}
+.price-content .price-l{
+    width: 60%;
+}.price-l p{
+    font-size: 15px;
+}
+.price-l h6{
+    margin: 0;
+    margin-bottom: 5px;
+}
+.hotel-price .total-price{
+    background-color: #ebf3ff;
+    height: 80px;
+    margin-bottom: 15px;
+}
+.total-price h4{
+    margin: 0;
+    text-align: right;
+    margin-right: 30px;
+}
+.total-price p{
+    margin-right: 30px;
+    text-align: right;
+}
+.hotel-price .detail-price{
+    display: flex;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+.detail-price i{
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.detail-price p{
+    font-size: 13px;
+    margin-right: 55px;
+}
+.detail-price .vnd{
+    margin: 0;
+}
+.detail-price .cost{
+    width: 150px;
+}
+.hotel-price .gtgt{
+    display: flex;
+    padding-left: 40px;
+    margin-bottom: 5px;
+}
+.gtgt p{
+    font-size: 13px;
+    margin: 0;
+}
+.gtgt .vnd-gtgt{
+    text-align: right;
+    margin-left: 115px;
+}
+.right-content .email-login{
+    border: 1px solid gainsboro;
+    display: flex;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+.email-login .email-pic{
+    width: 45px;
+    height: 45px;
+}
+.email-pic img{
+    width: 100%;
+    height: 100%;
+}
+.email-login .email-content{
+    margin-left: 10px;
+}
+.email-content h6{
+    margin: 0;
+}
+.right-content .payment-form{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-left: 15px;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.payment-form .input-name{
+    display: flex;
+    margin-top: 15px;
+}
+.input-name .input-l{
+    width: 45%;
+}
+.input-l input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+.input-name .input-r{
+    margin-left: 5%;
+    width: 45%;
+}
+.input-r input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+.payment-form .input-more{
+    margin-top: 10px;
+}
+.input-more h6{
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.input-more input {
+    width: 45%;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+.right-content .line{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+.payment-form .booking-for .radio-check{
+   display: flex;
+   flex-direction: column;
+}
+.booking-for input{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.booking-for .radio-check-cv label{
+    margin-right: 10px;
+}
+.booking-for {
+    margin-bottom: 15px;
+}
+.right-content .note{
+    margin-top: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.note .credit{
+    display: flex;
+    margin-top: 10px;
+}
+.credit p{
+    margin-left: 10px;
+    margin-right: 15px;
+}
+.right-content .payment-room{
+    margin-top: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.input-more .phone{
+    width: 45%;
+}
+.payment-room svg{
+    margin-right: 10px;
+}
+.payment-room i{
+    margin-right: 10px;
+}
+.right-content .button-payment{
+    margin-top: 15px;
+    text-align: right;
+}
