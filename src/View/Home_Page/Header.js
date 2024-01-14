@@ -85,7 +85,7 @@ class Header extends Component {
             </div>
             <div className="header-body row">
               <div className="col-3"></div>
-              <div className="header-body-left col-6">
+              <div className="header-body-left col-8">
                 <button type="button" class="btn text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +148,7 @@ class Header extends Component {
             </div>
             <div className="content-between row">
               {/* <div className="col-3"></div> */}
-              <div className="content-box col-6">
+              <div className="content-box col-7">
                 <div
                   className="box-search form-group search-input"
                   onClick={this.handleClickShowAttributes}

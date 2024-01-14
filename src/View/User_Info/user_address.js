@@ -22,9 +22,6 @@ const UserAddress = ({ title, value }) => {
         setIsEditing(true);
     };
 
-    const handleInputChange = (e) => {
-        setEditedUserName(e.target.value);
-    };
 
     const handleSaveClick = () => {
         setIsEditing(false);

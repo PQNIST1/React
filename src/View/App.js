@@ -8,6 +8,8 @@ import Home_Page from "./Home_Page/Home_Page";
 import Booking from "./Booking/Booking";
 import DeleteBooking from "./Booking/Delete_Booking";
 import Payment from "./Payment/Payment";
+import Rent from "./Custom_Role/roomer";
+import RoomForm from "./Custom_Role/room";
 
 function App() {
   return (
@@ -20,21 +22,15 @@ function App() {
             </Route>
           </Switch>
           <Switch>
-            <Route path="/info">
+            <Route path="/info" exact>
               <Info />
             </Route>
           </Switch>
           <Switch>
-            <Route path="/info">
-              <Info />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path="/booking">
+            <Route path="/booking" exact>
               <Booking />
             </Route>
           </Switch>
-
           <Switch>
             <Route path="/booking/detail">
               <DeleteBooking />
@@ -45,6 +41,11 @@ function App() {
               <Payment />
             </Route>
           </Switch>
+          <Switch>
+            <Route path="/booking/rent">
+              <Rent />
+            </Route>
+          </Switch> 
         </header>
       </div>
     </BrowserRouter>

@@ -15,17 +15,39 @@
     // width: 700px;
   }
 
-  .slick-prev {
-    background: blue !important;
-    // position: relative !important;
-    left: 0 !important;
-    z-index: 200;
-  }
-  .slick-next {
-    background: red !important;
-    right: 0 !important;
-    z-index: 200;
-  }
+  
+.custom-arrow {
+  z-index: 200;
+  position: relative;
+  top: 120px;
+  left: -20px;
+  color: black;
+  background-color: gainsboro;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none; /* Loại bỏ đường viền khi focus */
+}
+
+.custom-arrow:hover {
+  color: #007bff; /* Màu sắc khi di chuột vào */
+}
+.custom-arrowl {
+  z-index: 200;
+  position: relative;
+  top: -115px;
+  left: 1125px;
+  background-color: gainsboro;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none; /* Loạ Loại bỏ đường viền khi focus */
+}
+
+.custom-arrowl:hover {
+  color: #007bff; /* Màu sắc khi di chuột vào */
+}
+
 
   .home-body {
     height: 206px;
