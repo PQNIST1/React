@@ -8,6 +8,8 @@ import Home_Page from "./Home_Page/Home_Page";
 import Booking from "./Booking/Booking";
 import DeleteBooking from "./Booking/Delete_Booking";
 import Payment from "./Payment/Payment";
+import List from "./Search_Page/SearchList";
+import Hotel from "./Search_Page/hotel";
 
 function App() {
   return (
@@ -43,6 +45,16 @@ function App() {
           <Switch>
             <Route path="/booking/payment">
               <Payment />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/list">
+              <List />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/hotel">
+              <Hotel />
             </Route>
           </Switch>
         </header>
