@@ -40,7 +40,7 @@ const hotelSchema = new mongoose.Schema({
     },
     capacity: {
         type: Number,
-        default: 0
+        default: 0  
     },
     detail: {
         type: String
@@ -51,3 +51,6 @@ const hotelSchema = new mongoose.Schema({
    }]
 
 })
+const Hotel = mongoose.model('Hotel', hotelSchema);
+
+module.exports = {Hotel};

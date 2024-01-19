@@ -1,22 +1,33 @@
 const mongoose = require("mongoose");
-
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
-        unique: true
     },
     email: {
         type: String,
-        required: true,
-        unique: true
     },
     password: {
         type: String,
-        required: true
     },
     infoUser: {
-        type: infoUserSchema  
+        avatar : {
+            type: String,
+        },
+        username: {
+            type: String,
+        },
+        phone: {
+            type: String,
+        },
+        dateofbirth: {
+            type: Date,
+        },
+        sex: {
+            type: String,   
+        },      
+        address: {
+            type: String,
+        }  
     },
     createdAt: {
         type: Date,
@@ -30,7 +41,11 @@ const userSchema = new mongoose.Schema({
         createdAt: {
             type: Date,
             default: Date.now
-          }   
+          },
+        status:{
+            type:Boolean,
+            default: false
+        }
     }],
     role: {
         type: String,
@@ -38,31 +53,8 @@ const userSchema = new mongoose.Schema({
         default: 'user' // Phần quyền mặc định khi tạo người dùng mới
     }
 })
-const infoUserSchema = new mongoose.Schema({
-    avatar : {
-        type: String
-    },
-    username: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    phone: {
-        type: Number,
-        required: true,
-        unique: true
-    },
-    dateofbirth: {
-        type: Date
-    },
-    sex: {
-        type: Boolean
-    },
-    address: {
-        type: String
-    }
-})
+
 
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+module.exports = {User};
