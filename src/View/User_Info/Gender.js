@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const UserGender = ({ title, value }) => {
+const UserGender = ({ title, value, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [gender, setGender] = useState(value);
+  const [gender, setGender] = useState('');
 
   const handleEditClick = () => {
     setIsEditing(true);
   };
-
+  useEffect(() => {
+    // Kiểm tra xem user có giá trị không và userName chưa được thiết lập
+    if (value && !gender) {
+      setGender(value);
+    }
+  }, [value, gender]);
   const handleGenderChange = (e) => {
     setGender(e.target.value);
   };
 
   const handleSaveClick = () => {
     setIsEditing(false);
+    onUpdate({ infoUser:{ sex: gender }});
     // Thực hiện các hành động cần thiết để lưu thông tin người dùng, chẳng hạn gửi dữ liệu lên server.
   };
 

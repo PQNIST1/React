@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import bookingImg from "../../../src/assets/images/292129389.jpeg";
+import room from "../../assets/json/room";
 
 class Home_Child6 extends Component {
   render() {
@@ -43,150 +44,27 @@ class Home_Child6 extends Component {
 
               <div className="home-body row align-items-center">
                 <Slider {...settings}>
+                {room.map((item,index)=>(
                   <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
+                    <img src={item.img} class="card-img-top" alt="..." />
                     <div class="card-body">
                       <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
+                        {item.name}
                       </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
+                      <p class="card-text">{item.address}</p>
                       <button
                         type="button"
                         class="btn btn-primary list-inline mr-2"
                         disabled
                       >
-                        8.6
+                        {item.rate.point}
                       </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
+                      <p class="card-text list-inline-item">{item.rate.status}</p>
+                      <p class="card-text list-inline-item">{item.rate.count} đánh giá</p>
                     </div>
                   </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        Waldschenke Stendenitz Übernachten im Wald am See
-                      </h5>
-                      <p class="card-text">Đức, Neuruppin</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                    </div>
-                  </div>
+                ))}
+                  
                 </Slider>
               </div>
             </div>

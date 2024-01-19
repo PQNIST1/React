@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import bookingImg from "../../../src/assets/images/292129389.jpeg";
+import hotel from "../../assets/json/hotel";
 
 class Home_Child3 extends Component {
   render() {
@@ -39,70 +40,16 @@ class Home_Child3 extends Component {
 
               <div className="home-body row align-items-center">
                 <Slider {...settings}>
+                {hotel.map((item,index)=>(
                   <div class="content">
                     <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
+                      <img src={item.img} className="card-img3" alt=""></img>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
+                      {item.name}
                     </div>
                   </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img3" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Khách sạn
-                    </div>
-                  </div>
+                ))}    
                 </Slider>
               </div>
             </div>

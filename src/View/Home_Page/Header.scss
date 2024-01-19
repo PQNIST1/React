@@ -52,7 +52,11 @@
         top: 45px;
         z-index: 1000;
         width: 45%;
-
+        height: 300px;
+        .list-group{
+          max-height: 250px;
+          overflow-y: auto;
+        }
         .card {
           position: absolute;
         }
@@ -76,7 +80,9 @@
       input {
         cursor: pointer;
       }
-
+      .rmdp-input{
+        width: 200px;
+      }
       // .e-calendar {
       //   margin-top: 20px;
       //   width: 615px;
@@ -113,6 +119,62 @@
 
     .header-top-right {
       text-align: end;
+      .login-contro{
+        padding: 0;
+        .contro-login{
+          padding-top: 5px;
+          .user-info-menu{
+            position: absolute;
+            background-color: white;
+            z-index: 300;
+            top: 70px;
+            width: 200px;
+            border-radius: 10px;
+            left: 70%;
+            text-align: left;
+            button{
+              border: none;
+              color: black;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              padding-left: 10px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              width: 100%;
+              text-align: left;
+              border-radius: 10px;
+            }
+            button:hover{
+              background-color: gray;
+            }
+          }
+          .info-button{
+            margin-left: 90px;
+            color: white;
+            background-color: #003b95;
+            width: 150px;
+            border: none;
+            img{
+              margin-left: 10px;
+              margin-right: 10px;
+              width: 40px;
+              border-radius: 50%;
+              height: 40px;
+              font-weight: bold;
+            }
+            h5{
+              padding: 0;
+              margin: 0;
+            }
+            p{
+              padding: 0;
+              margin: 0;
+              color: #ffb700;
+            }
+          }
+        }
+      }
     }
 
     span {

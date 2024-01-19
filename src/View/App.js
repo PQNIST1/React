@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Info from "./User_Info/Info";
 
@@ -10,42 +10,29 @@ import DeleteBooking from "./Booking/Delete_Booking";
 import Payment from "./Payment/Payment";
 import Rent from "./Custom_Role/roomer";
 import RoomForm from "./Custom_Role/room";
+import Hotel from './pages/hotel/Hotel'
+import List from './pages/list/List'
+import Home from "./pages/home/Home";
+import Register from "./components/form/register";
+import Login from "./components/form/login";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <Switch>
-            <Route path="/" exact>
-              <Home_Page />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path="/info" exact>
-              <Info />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path="/booking" exact>
-              <Booking />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path="/booking/detail">
-              <DeleteBooking />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path="/booking/payment">
-              <Payment />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path="/booking/rent">
-              <Rent />
-            </Route>
-          </Switch> 
+          <Routes>
+            <Route path="/" element={<Home_Page/>}/>
+            <Route path="/info" element={<Info/>}/>
+            <Route path="/booking" element={ <Booking />}/>
+            <Route path="/booking/detail/:id" element={ <DeleteBooking/>}/>
+            <Route path="/booking/payment/:id" element={<Payment/>}/>
+            <Route path="/booking/rent" element={<Rent/>}/>
+            <Route path="/hotels/:province" element={<List />} />
+            <Route path="/hotel/:id" element={<Hotel/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/login" element={<Login/>}/>
+          </Routes>
         </header>
       </div>
     </BrowserRouter>

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const NameInput = () => {
-  const [firstName, setFirstName] = useState('Nguyen');
-  const [lastName, setLastName] = useState('Nguyen');
-
+const NameInput = ({value}) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  console.log(value);
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
   };
@@ -11,6 +11,13 @@ const NameInput = () => {
   const handleLastNameChange = (event) => {
     setLastName(event.target.value);
   };
+  useEffect(() => {
+    // Kiểm tra xem user có giá trị không và userName chưa được thiết lập
+    if (value) {
+      setLastName(value);
+      setFirstName(value);
+    }
+  }, [value]);
 
   return (
     <div className='input-name'>

@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import bookingImg from "../../../src/assets/images/292129389.jpeg";
+import place from "../../assets/json/place";
 
 class Home_Child7 extends Component {
   render() {
@@ -39,214 +40,35 @@ class Home_Child7 extends Component {
 
               <div className="home-body row align-items-center">
                 <Slider {...settings}>
+                {place.map((item,index)=>(
                   <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
+                    <img src={item.img} class="card-img-top" alt="..." />
                     <div class="card-body">
                       <h5 class="card-title">
                         <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
+                          {item.name}
                         </div>{" "}
                       </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
+                      <p class="card-text">{item.address}</p>
                       <button
                         type="button"
                         class="btn btn-primary list-inline mr-2"
                         disabled
                       >
-                        8.6
+                        {item.rate.point}
                       </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
+                      <p class="card-text list-inline-item">{item.rate.status}</p>
+                      <p class="card-text list-inline-item">{item.rate.count} đánh giá</p>
                       <div className="price list-inline">
                         <p className="list-inline-item">Bắt đầu từ</p>
                         <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
+                          VND {item.money}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card6 card">
-                    <img src={bookingImg} class="card-img-top" alt="..." />
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <div class="e1eebb6a1e e6208ee469 d0caee4251 e714215256">
-                          Aparthotel Stare Miasto
-                        </div>{" "}
-                      </h5>
-                      <p class="card-text">Old Town, Ba Lan, Kraków</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary list-inline mr-2"
-                        disabled
-                      >
-                        8.6
-                      </button>
-                      <p class="card-text list-inline-item">Tuyệt vời</p>
-                      <p class="card-text list-inline-item">293 đánh giá</p>
-                      <div className="price list-inline">
-                        <p className="list-inline-item">Bắt đầu từ</p>
-                        <p class="font-weight-bold list-inline-item">
-                          VND 3.099.690
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                ))}
+                  
                 </Slider>
               </div>
             </div>

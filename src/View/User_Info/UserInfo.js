@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
-const UserInfo = ({title, value}) => {
+import React, { useState,useEffect } from 'react';
+const UserInfo = ({title, value,  onUpdate}) => {
     const [isEditing, setIsEditing] = useState(false);
-    const [userName, setUserName] = useState(value); // Giả sử tên người dùng đã có sẵn
-    const [editedUserName, setEditedUserName] = useState(value);
-  
+    const [userName, setUserName] = useState(''); // Giả sử tên người dùng đã có sẵn
+    const [editedUserName, setEditedUserName] = useState('');
+
+    useEffect(() => {
+      // Kiểm tra xem user có giá trị không và userName chưa được thiết lập
+      if (value && !userName) {
+        setUserName(value);
+        setEditedUserName(value);
+      }
+    }, [value, userName]);
     const handleEditClick = () => {
       setIsEditing(true);
     };
@@ -15,6 +22,7 @@ const UserInfo = ({title, value}) => {
     const handleSaveClick = () => {
       setIsEditing(false);
       setUserName(editedUserName);
+      onUpdate({ name: editedUserName });
       // Thực hiện các hành động cần thiết để lưu thông tin người dùng, chẳng hạn gửi dữ liệu lên server.
     };
   

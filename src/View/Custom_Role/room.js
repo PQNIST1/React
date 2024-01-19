@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const RoomForm = () => {
+const RoomForm = ({onChange}) => {
     const [rooms, setRooms] = useState([]);
     const [roomInfo, setRoomInfo] = useState({
-        name: '',
+        detail: '',
         capacity: '',
         price: '',
     });
+    useEffect(() => {
+        // Use the latest value of rooms when onChange is called
+        onChange('rom', rooms);
+      }, [rooms]);
+
+
     const [editingIndex, setEditingIndex] = useState(null);
 
     const handleInputChange = (e) => {
@@ -19,7 +25,7 @@ const RoomForm = () => {
 
     const handleAddRoom = () => {
         // Kiểm tra xem tất cả các trường có giá trị không
-        if (!roomInfo.name || !roomInfo.capacity || !roomInfo.price) {
+        if (!roomInfo.detail || !roomInfo.capacity || !roomInfo.price) {
             alert('Vui lòng nhập đầy đủ thông tin phòng.');
             return;
         }
@@ -39,12 +45,12 @@ const RoomForm = () => {
 
         // Sau khi thêm/sửa, đặt thông tin phòng về trạng thái ban đầu
         setRoomInfo({
-            name: '',
+            detail: '',
             capacity: '',
             price: '',
         });
+        onChange('rom',rooms)
     };
-
     const handleEditRoom = (index) => {
         // Đặt thông tin phòng từ danh sách vào form để sửa
         setRoomInfo(rooms[index]);
@@ -54,8 +60,8 @@ const RoomForm = () => {
     const handleDeleteRoom = (index) => {
         // Xóa phòng khỏi danh sách
         setRooms((prevRooms) => prevRooms.filter((_, i) => i !== index));
+        onChange('rom',rooms);
     };
-
     const formatter = new Intl.NumberFormat('vi-VN', {
         style: 'currency',
         currency: 'VND',
@@ -71,8 +77,8 @@ const RoomForm = () => {
                         <input
                             className='i1'
                             type="text"
-                            name="name"
-                            value={roomInfo.name}
+                            name="detail"
+                            value={roomInfo.detail}
                             onChange={handleInputChange}
                         />
                     </label>
@@ -109,7 +115,7 @@ const RoomForm = () => {
                 <ul>
                     {rooms.map((room, index) => (
                         <li key={index}>
-                            {room.name} - Sức Chứa: {room.capacity}, Giá: {formatter.format(room.price)}
+                            {room.detail} - Sức Chứa: {room.capacity}, Giá: {formatter.format(room.price)}
                             <button type="button" onClick={() => handleEditRoom(index)}>
                                 Sửa
                             </button>

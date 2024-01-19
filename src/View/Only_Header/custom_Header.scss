@@ -1,0 +1,201 @@
+// @import url("https://cdn.syncfusion.com/ej2/material.css");
+
+.header-container-new {
+  background-color: #003b95;
+  height: 150px;
+  margin-bottom: 50px;
+  padding: 0;
+  position: relative;
+  .content-between {
+    // height: 140px;
+    display: flex;
+    // margin-top: 51px;
+
+    .content-box {
+      height: 60px;
+      border-radius: 15px;
+      padding-left: 5px;
+      padding-right: 5px;
+      z-index: 2;
+      position: absolute;
+      margin-top: 10px;
+      left: 25%;
+      background-color: #ffb700;
+      // border: 5px solid #ffb700;
+      color: black;
+      display: flex;
+
+      input {
+        background: transparent;
+        border: none;
+        outline: none;
+        // border: 1px solid red;
+      }
+
+      svg {
+        padding-bottom: 3px;
+        padding-right: 3px;
+      }
+
+      .box-search {
+        width: 350px;
+        height: 50px;
+        margin: 5px 0;
+        padding: 12px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .custom-card {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        top: 45px;
+        z-index: 1000;
+        width: 45%;
+        .list-group{
+          max-height: 250px;
+          overflow-y: auto;
+        }
+        .card {
+          position: absolute;
+        }
+
+        i {
+          padding-right: 5px;
+        }
+      }
+    }
+    .box-calendar {
+      width: 420px;
+      height: 50px;
+      margin: 5px 3px;
+      padding: 12px;
+      background-color: white;
+      border-radius: 10px;
+      // i {
+      //   padding-right: 5px;
+      // }
+
+      input {
+        cursor: pointer;
+      }
+      .rmdp-input{
+        width: 200px;
+      }
+      // .e-calendar {
+      //   margin-top: 20px;
+      //   width: 615px;
+      //   max-width: none;
+      // }
+    }
+    .box-reservation {
+      width: 40px;
+      height: 103px;
+      padding: 5px;
+      padding-left: 1px;
+      border-radius: 10px;
+
+      button {
+        height: 50px;
+        width: 94px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+.header-content {
+  color: white;
+
+  .header-top {
+    align-items: center;
+    margin: 0 auto;
+    height: 70px;
+
+    .header-top-left {
+      font-size: 30px;
+      padding-bottom: 14px;
+    }
+
+    .header-top-right {
+      text-align: end;
+    }
+
+    span {
+      padding: 15px;
+    }
+
+    button {
+      color: #006ce5;
+      padding: 3px 6px;
+    }
+  }
+
+  .header-body {
+    .header-body-left {
+      button {
+        border: 1px solid white;
+        border-radius: 30px;
+        height: 51px;
+        margin-right: 5px;
+      }
+
+      span {
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 30px;
+
+        &:hover {
+          background-color: #ffffff3b;
+        }
+      }
+
+      i {
+        padding: 5px;
+      }
+
+      svg {
+        padding-bottom: 3px;
+        padding-right: 3px;
+      }
+    }
+  }
+
+  .header-bot {
+    height: 429px;
+    .content-up {
+      padding-top: 50px;
+      margin-bottom: 65px;
+
+      .title-top {
+        font-size: 50px;
+      }
+      .title-bot {
+        font-size: 20px;
+        padding-left: 20px;
+      }
+    }
+    .content-down {
+      background-color: white;
+      height: 134px;
+      padding-top: 50px;
+      position: absolute;
+      margin-left: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      .form-check-input {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+      }
+
+      .form-check-label {
+        padding: 10px;
+        padding-top: 2px;
+        color: black;
+      }
+    }
+  }
+}

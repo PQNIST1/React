@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import bookingImg from "../../../src/assets/images/292129389.jpeg";
+import tourist from "../../assets/json/tourist";
 
 class Home_Child2 extends Component {
   render() {
@@ -29,9 +30,10 @@ class Home_Child2 extends Component {
       prevArrow: <CustomArrow onClick={() => {}} icon={faArrowLeft} />,
       nextArrow: <CustomArrowl onClick={() => {}} icon={faArrowRight} />,
     };
-
     return (
+      
       <>
+     
         <div className="home-container2 container">
           <div className="home-content">
             <div className="home-title">
@@ -41,94 +43,19 @@ class Home_Child2 extends Component {
               </span>
               <div className="home-body row align-items-center">
                 <Slider {...settings}>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
+                {tourist.map((item,index)=>(
+                <div class="content">
+                    <div key={index} className="d-flex justify-content-center align-items-center">
+                      <img src={item.img} className="card-img2" alt=""></img>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
+                     {item.name}
                     </div>
                     <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
+                      {item.room} chỗ nghỉ
                     </span>
                   </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      2145 chỗ nghỉ
-                    </span>
-                  </div>
+                ))}
                 </Slider>
               </div>
             </div>

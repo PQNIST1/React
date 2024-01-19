@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 
-const UserAddress = ({ title, value }) => {
+const UserAddress = ({ title, value, onUpdate }) => {
     const [isEditing, setIsEditing] = useState(false);
-    const [userName, setUserName] = useState(value);
-    const [editedUserName, setEditedUserName] = useState(value);
+    const [userName, setUserName] = useState('');
+    const [editedUserName, setEditedUserName] = useState('');
     const [country, setCountry] = useState('');
     const [region, setRegion] = useState('');
-
+    const parts = value.split(', ');
     const selectCountry = (val) => {
         setCountry(val);
         setEditedUserName(`${val}, ${region}`);
     };
+
+    useEffect(() => {
+        // Kiểm tra xem user có giá trị không và userName chưa được thiết lập
+        if (value && !userName) {
+          setUserName(value);
+          setEditedUserName(value);
+          setCountry(parts[0]);
+          setRegion(parts[1]);
+        }
+      }, [value, userName]);
 
     const selectRegion = (val) => {
         setRegion(val);
@@ -26,6 +36,7 @@ const UserAddress = ({ title, value }) => {
     const handleSaveClick = () => {
         setIsEditing(false);
         setUserName(editedUserName);
+        onUpdate({ infoUser:{ address: editedUserName }});
         // Perform other actions needed to save user information, e.g., send data to the server.
     };
 

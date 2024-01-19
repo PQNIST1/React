@@ -1,50 +1,64 @@
 import React, { Component } from "react";
 import MyDatePicker from "./clendar/clendar";
 import "./Header.scss";
+import { useState } from "react";
+import UserProfile from "../User/userInfo";
+import jsonData from "../../assets/json/cities";
+import { useParams } from "react-router-dom";
 
 class Header extends Component {
-  state = {
-    isCalendarVisible: false,
-    isAttributesVisible: false,
-  };
 
-  handleClickOnShowCalendar = () => {
-    this.setState({
-      isCalendarVisible: !this.state.isCalendarVisible,
-    });
-  };
 
-  handleClickHideCalendar = () => {
-    this.setState({
-      isCalendarVisible: false,
-    });
-  };
 
-  handleClickShowAttributes = (e) => {
-    e.stopPropagation();
-    this.setState({
-      isAttributesVisible: true,
-    });
-  };
 
-  handleClickHideAttributes = () => {
-    this.setState({
-      isAttributesVisible: false,
-    });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+        isLoggedIn: false,
+        isAttributesVisible: false,
+        selectedAttribute: ''
+    };
+}
 
-  componentDidMount() {
-    document.addEventListener("click", this.handleClickHideCalendar);
-    document.addEventListener("click", this.handleClickHideAttributes);
-  }
+handleHomeSearch = () => {
+  const { selectedAttribute } = this.state;
+  window.location.href = `/hotels/${selectedAttribute}`;
+}
+
+ handleHome() {
+  window.location.href ="/"
+ }
+
+componentDidMount() {
+    // Check if there is an accessToken in localStorage
+    document.addEventListener('click', this.handleDocumentClick);
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+        this.setState({ isLoggedIn: true });
+    }
+}
+
+handleClickShowAttributes = (e) => {
+  e.stopPropagation();
+  this.setState({ isAttributesVisible: !this.state.isAttributesVisible });
+};
+
+
+  handleAttributeClick = (attribute) => {
+    this.setState({ selectedAttribute: attribute, isAttributesVisible: false });
+  };
+  handleDocumentClick = () => {
+    if (this.state.isAttributesVisible) {
+      this.setState({ isAttributesVisible: false });
+    }
+  };
 
   componentWillUnmount() {
-    document.removeEventListener("click", this.handleClickHideCalendar);
-    document.removeEventListener("click", this.handleClickHideAttributes);
+    document.removeEventListener('click', this.handleDocumentClick);
   }
 
   renderAttributesList() {
-    const attributes = ["Đà Nẵng", "Hội An", "Huế", "Đà Lạt", "Nha Trang"];
+    const attributes = jsonData.map(item => item.name)  ;
 
     return (
       <ul className="list-group">
@@ -52,7 +66,7 @@ class Header extends Component {
           Các địa điểm được ưa thích gần đây
         </li>
         {attributes.map((attribute, index) => (
-          <li key={index} className="list-group-item">
+          <li key={index} className="list-group-item" onClick={() => this.handleAttributeClick(attribute)}>
             <i class="fas fa-map-marker-alt"></i>
             {attribute}
           </li>
@@ -62,24 +76,39 @@ class Header extends Component {
   }
 
   render() {
+    const { isLoggedIn } = this.state;
     return (
       <>
         <div className="header-container container-fluid">
           <div className="header-content">
             <div className="header-top row">
               <div className="col-3"></div>
-              <div className="header-top-left col-2">
+              <div className="header-top-left col-2" onClick={this.handleHome}>
                 <span className="font-weight-bolder p-2">Booking.com</span>
               </div>
               <div className="header-top-right col-4 ">
+              <div className="row login-contro">
                 <span>VND</span>
                 <span>Đăng chỗ nghỉ của quý vị</span>
-                <button type="button" class="btn btn-light mr-4">
-                  Đăng ký
-                </button>
-                <button type="button" class="btn btn-light">
-                  Đăng nhập
-                </button>
+                <div className="contro-login">
+                {isLoggedIn ? (
+                    // Show logout button if logged in
+                    <UserProfile/>
+
+                ) : (
+                    // Show register and login buttons if not logged in
+                    <>
+                        <button type="button" className="btn btn-light mr-4">
+                            <a href="/register">Đăng ký</a>
+                        </button>
+                        <button type="button" className="btn btn-light">
+                            <a href="/login">Đăng nhập</a>
+                        </button>
+                    </>
+                )}
+                </div>
+              </div>
+               
               </div>
               <div className="col-3"></div>
             </div>
@@ -162,7 +191,7 @@ class Header extends Component {
                   >
                     <path d="M2.75 12h18.5c.69 0 1.25.56 1.25 1.25V18l.75-.75H.75l.75.75v-4.75c0-.69.56-1.25 1.25-1.25zm0-1.5A2.75 2.75 0 0 0 0 13.25V18c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 18v-4.75a2.75 2.75 0 0 0-2.75-2.75H2.75zM0 18v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 0 18zm22.5 0v3a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-1.5 0zm-.75-6.75V4.5a2.25 2.25 0 0 0-2.25-2.25h-15A2.25 2.25 0 0 0 2.25 4.5v6.75a.75.75 0 0 0 1.5 0V4.5a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 0 1.5 0zm-13.25-3h7a.25.25 0 0 1 .25.25v2.75l.75-.75h-9l.75.75V8.5a.25.25 0 0 1 .25-.25zm0-1.5A1.75 1.75 0 0 0 6.75 8.5v2.75c0 .414.336.75.75.75h9a.75.75 0 0 0 .75-.75V8.5a1.75 1.75 0 0 0-1.75-1.75h-7z"></path>
                   </svg>
-                  <input type="text" placeholder="Bạn muốn đến đâu ?" />
+                  <input type="text" placeholder="Bạn muốn đến đâu ?" value={this.state.selectedAttribute}/>
                 </div>
                 {this.state.isAttributesVisible && (
                   <div
@@ -177,12 +206,9 @@ class Header extends Component {
                 <div className="box-calendar form-group calendar-input">
                   {/* <i class="far fa-calendar-check"></i> */}
                   <MyDatePicker />
-                  {this.state.isCalendarVisible && (
-                    <div className="calendar-container"></div>
-                  )}
                 </div>
                 <div className="box-reservation">
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary" onClick={this.handleHomeSearch}>
                     Tìm
                   </button>
                 </div>

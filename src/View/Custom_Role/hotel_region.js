@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 
-const HotelRegionSelector = () => {
+const HotelRegionSelector = ({onChange}) => {
   const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
-  const [address, setAddress] = useState('');
-
-  const handleAddress = (event) => {
-    setAddress(event.target.value);
-  };
   const selectCountry = (val) => {
     setCountry(val);
+    onChange('address', { province: region, s_address: val});
   };
 
   const selectRegion = (val) => {
     setRegion(val);
+    onChange('address', {province: val, s_address: country });
   };
-
   return (
     <div>
       <h6>Vùng/quốc gia</h6>
@@ -32,14 +28,6 @@ const HotelRegionSelector = () => {
         onChange={(val) => selectRegion(val)}
         defaultOptionLabel='Chọn vùng của bạn'
       />
-      <div className='hotel-address'>
-        <input
-          type='text'
-          value={address}
-          onChange={handleAddress}
-          placeholder='Nhập địa chỉ chổ nghỉ của bạn'
-        />
-      </div>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-const UserDate = ({ title, value }) => {
+const UserDate = ({ title, value, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [birthDate, setBirthDate] = useState(new Date(value)); // Khởi tạo giá trị mặc định từ chuỗi ngày tháng năm
-
+  const [birthDate, setBirthDate] = useState(new Date('')); // Khởi tạo giá trị mặc định từ chuỗi ngày tháng năm
+  console.log(value)
   useEffect(() => {
     // Chuyển đổi giá trị ngày tháng từ chuỗi sang đối tượng Date khi giá trị thay đổi
     setBirthDate(new Date(value));
@@ -41,7 +41,7 @@ const UserDate = ({ title, value }) => {
 
     // Lấy chuỗi ngày tháng đã định dạng
     const formattedDate = formatDate(birthDate);
-
+    onUpdate({ infoUser:{dateofbirth : birthDate }});
     // Thực hiện các hành động cần thiết để lưu thông tin người dùng, chẳng hạn gửi dữ liệu lên server.
     console.log('Ngày tháng năm đã định dạng:', formattedDate);
   };

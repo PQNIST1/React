@@ -4,10 +4,64 @@ import Check2 from "./check2";
 import CountryRegionSelector from "./country";
 import EmailValidator from "./email";
 import NameInput from "./name";
+import { useState,useEffect } from "react";
+import axios from "axios";
 import './payment.css'
 import PhoneNumberInput from "./phone";
+import { useParams } from "react-router-dom";
+import addBooking from "../pages/hotel/addHotel";
 export default function Payment() {
+    var {id} = useParams();
+    const [user, setUser] = useState({});
+    const [infoUser, setinfoUser] = useState({});
+    const [hotel, setHotel] = useState({});
+    const [infoUserPhone, setinfoUserPhone] = useState('');
+    const [infoUserDate, setinfoUserDate] = useState('');
+    const [infoUserAddress, setinfoUserAddress] = useState('');
+    const [infoUserGender, setinfoUserGender] = useState('');
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                // Lấy accessToken từ localStorage
+                const accessToken = localStorage.getItem('accessToken');
+                
+                // Gọi API để lấy thông tin người dùng
+                const response = await axios.get('http://localhost:8000/user', {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                });
 
+                // Lưu thông tin người dùng vào state
+                setUser(response.data);
+                setinfoUser(response.data.infoUser);
+                setinfoUserAddress(response.data.infoUser.address);
+                setinfoUserPhone(response.data.infoUser.phone);
+                setinfoUserDate(response.data.infoUser.dateofbirth);
+                setinfoUserGender(response.data.infoUser.sex);
+            } catch (error) {
+                console.error('Error fetching user:', error.message);
+            }
+        };
+
+        fetchUser();
+    }, []);
+    useEffect(() => {
+        const fetchHotel = async () => {
+          try {
+            const response = await axios.get(`http://localhost:8000/hotel/${id}`);
+            setHotel(response.data);
+          } catch (error) {
+            console.error('Error fetching hotel:', error);
+          }
+        };
+    
+        fetchHotel();
+      }, [id]);
+      const handleaddBooking = () => {
+        addBooking(hotel._id)
+        window.location.href = '/booking'
+      };
     return (
         <>
             <div className="payment container-fluid">
@@ -25,7 +79,7 @@ export default function Payment() {
                                     <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <h6>Khách sạn Hương Bình</h6>
+                            <h6>{hotel.name}</h6>
                             <p>720A Đường Điện Biên Phủ, Quận Bình Thạnh, TP. Hồ Chí Minh, Việt Nam</p>
                             <div className="service">
                                 <div className="box">
@@ -104,17 +158,17 @@ export default function Payment() {
                             </div>
                             <div className="email-content">
                                 <h6>Bạn đã được đăng nhập</h6>
-                                <p>nguyenpham23476@gmail.com</p>
+                                <p>{user.email}</p>
                             </div>
                         </div>
                         <div className="payment-form">
                             <h4>Nhập thông tin chi tiết của bạn</h4>
-                            <NameInput />
+                            <NameInput value={user.name} />
                             <div className="input-more">
 
-                                <EmailValidator />
-                                <CountryRegionSelector />
-                                <PhoneNumberInput />
+                                <EmailValidator value={user.email} />
+                                <CountryRegionSelector value={infoUserAddress} />
+                                <PhoneNumberInput  value= {infoUserPhone}/>
                             </div>
                             <div className="line"></div>
                             <div className="booking-for">
@@ -157,7 +211,7 @@ export default function Payment() {
 
                         </div>
                         <div className="button-payment">
-                            <button className="btn btn-primary">Xác Nhận đặc phòng </button>
+                            <button className="btn btn-primary" onClick={handleaddBooking}>Xác Nhận đặc phòng </button>
                         </div>
                     </div>
                 </div>

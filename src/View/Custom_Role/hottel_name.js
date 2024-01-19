@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const HottelInput = () => {
-  const [hotelName, setHotelName] = useState('Hương Bình');
-  const [ownerName, setOwnerName] = useState('Nguyen');
+const HottelInput = ({onChange}) => {
+  const [hotelName, setHotelName] = useState('');
+  const [ownerName, setOwnerName] = useState('');
 
   const handleFirstNameChange = (event) => {
     setHotelName(event.target.value);
+    onChange('name',event.target.value);
   };
 
   const handleLastNameChange = (event) => {

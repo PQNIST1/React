@@ -44,7 +44,7 @@ class Home_Child1 extends Component {
                   <div className="card">
                     <div className="row no-gutters">
                       <div className="col-4">
-                        <img src={bookingImg} alt="" className="" />
+                        <img src='https://r-xx.bstatic.com/xdata/images/xphoto/500x500/220031205.jpeg?k=bf9841e8ba89dfdf92e02d45e45dc89fcca2d981b7c74ad57d3ecf6ba64ba1c2&o=' alt="" className="" />
                       </div>
                       <div class="col-8">
                         <div class="card-body">
@@ -80,7 +80,7 @@ class Home_Child1 extends Component {
                   <div className="card">
                     <div className="row no-gutters">
                       <div className="col-4">
-                        <img src={bookingImg} alt="" className="" />
+                        <img src={'https://i.imgur.com/mdKa3tU.jpg'} alt="" className="" />
                       </div>
                       <div class="col-8">
                         <div class="card-body">

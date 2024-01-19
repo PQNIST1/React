@@ -1,7 +1,31 @@
+import { useParams } from "react-router-dom";
 import OnlyHeader from "../Only_Header/Only_Header";
 import './delete.css'
+import axios from "axios";
+import { useState, useEffect } from "react";
+import deleteBooking from "./delete";
 
 export default function DeleteBooking() {
+    const {id} = useParams();
+    const [hotel, setHotel] = useState({});
+    useEffect(() => {
+        const fetchHotel = async () => {
+          try {
+            const response = await axios.get(`http://localhost:8000/hotel/${id}`);
+            setHotel(response.data);
+          } catch (error) {
+            console.error('Error fetching hotel:', error);
+          }
+        };
+        fetchHotel();
+      }, [id]);
+      const handledeleteBooking = () => {
+        deleteBooking(hotel._id)
+        window.location.href = '/booking'
+      };
+      const handDetail = () =>{
+        window.location.href = `/hotel/${hotel._id}`
+      }
     return (
         <>
             <div className="delete-booking container-fluid">
@@ -11,7 +35,7 @@ export default function DeleteBooking() {
                     <div className="content">
                         <div className="detail">
                             <div className="name">
-                                <a href="" ><h5>Khách sạn Hương Bình</h5></a>
+                                <a onClick={handDetail} ><h5>{hotel.name}</h5></a>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -62,7 +86,7 @@ export default function DeleteBooking() {
                             <p>Bạn luôn có thể xem hoặc thay đổi đặt phòng trực tuyến - không cần phải đăng ký.</p>
                             <div className="action">
                             <i class="fas fa-times-circle"></i>
-                            <a href="">Hủy đặt phòng</a>
+                            <a onClick={handledeleteBooking}><span>Hủy đặt phòng</span></a>
                             </div>
                             <div className="action">
                             <i class="fas fa-comment-alt"></i>

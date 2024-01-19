@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const EmailValidator = () => {
+const EmailValidator = ({value}) => {
   const [email, setEmail] = useState('');
   const [isValid, setIsValid] = useState(true);
 
@@ -17,6 +17,12 @@ const EmailValidator = () => {
     // Update the isValid state based on whether the email matches the regex
     setIsValid(emailRegex.test(value));
   };
+  useEffect(() => {
+    // Kiểm tra xem user có giá trị không và userName chưa được thiết lập
+    if (value) {
+      setEmail(value);
+    }
+  }, [value]);
 
   return (
     <div>

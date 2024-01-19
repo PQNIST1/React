@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import bookingImg from "../../../src/assets/images/292129389.jpeg";
+import area from "../../assets/json/area";
 
 class Home_Child5 extends Component {
   constructor(props) {
@@ -102,94 +103,20 @@ class Home_Child5 extends Component {
               </div>
               <div className="home-body row align-items-center">
                 <Slider {...settings}>
+                {area.map((item,index)=>(
                   <div class="content">
                     <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
+                      <img src={item.img} className="card-img2" alt=""></img>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
+                        {item.name}
                     </div>
                     <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
+                      Cách đây {item.km}km
                     </span>
                   </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
-                  <div class="content">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <img src={bookingImg} className="card-img2" alt=""></img>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center">
-                      Đà Nẵng
-                    </div>
-                    <span className="title-content d-flex justify-content-center align-items-center">
-                      Cách đây 23km
-                    </span>
-                  </div>
+                ))}
+               
                 </Slider>
               </div>
             </div>

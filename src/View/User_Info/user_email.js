@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
-const UserEmail = ({ title, value }) => {
+const UserEmail = ({ title, value, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [userName, setUserName] = useState(value);
-  const [editedUserName, setEditedUserName] = useState(value);
+  const [userName, setUserName] = useState('');
+  const [editedUserName, setEditedUserName] = useState('');
   const [isValid, setIsValid] = useState(true);
 
   const handleEditClick = () => {
     setIsEditing(true);
   };
-
+  useEffect(() => {
+    // Kiểm tra xem user có giá trị không và userName chưa được thiết lập
+    if (value && !userName) {
+      setUserName(value);
+      setEditedUserName(value);
+    }
+  }, [value, userName]);
   const handleInputChange = (e) => {
     validateEmail(editedUserName);
     setEditedUserName(e.target.value);
@@ -22,6 +28,7 @@ const UserEmail = ({ title, value }) => {
     if (isValid) {
       setIsEditing(false);
       setUserName(editedUserName);
+      onUpdate({ email: editedUserName });
       // Perform other actions needed to save user information, e.g., send data to the server.
     }
   };

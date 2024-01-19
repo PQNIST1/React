@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const MultiImageUploader = ({ onImagesUpload }) => {
+const MultiImageUploader = ({ onImagesUpload, onChange }) => {
   const [selectedImages, setSelectedImages] = useState([]);
+
+  useEffect(() => {
+    // Hàm chuyển đổi URL
+    const updateImagesWithUrls = async () => {
+      const urls = await Promise.all(selectedImages.map((image) => readFileAsDataURL(image)));
+      // Now 'urls' contains the URLs for each selected image
+      onChange('image',urls);
+    };
+
+    // Gọi hàm chuyển đổi URL sau khi selectedImages thay đổi
+    updateImagesWithUrls();
+  }, [selectedImages]);
 
   const handleFileChange = (event) => {
     const files = event.target.files;
@@ -32,6 +44,15 @@ const MultiImageUploader = ({ onImagesUpload }) => {
     }
   };
 
+  // Function to read the image file and convert it to URL
+  const readFileAsDataURL = (file) => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => resolve(e.target.result);
+      reader.readAsDataURL(file);
+    });
+  };
+
   return (
     <div className="multi-image-uploader">
       <h6>Tải ảnh lên:</h6>
@@ -43,7 +64,7 @@ const MultiImageUploader = ({ onImagesUpload }) => {
             {selectedImages.map((image, index) => (
               <div key={index} className="selected-image">
                 <img src={URL.createObjectURL(image)} alt={`Selected ${index + 1}`} />
-                <button  onClick={() => removeImage(index)}>Xóa</button>
+                <button onClick={() => removeImage(index)}>Xóa</button>
               </div>
             ))}
           </div>
