@@ -43,7 +43,8 @@
                 },
               });
           
-              console.log(response.data); // Log thông tin khách sạn mới được tạo
+              console.log(response.data); 
+              window.location.href = "/booking"
             } catch (error) {
               console.error('Error creating hotel:', error);
             }

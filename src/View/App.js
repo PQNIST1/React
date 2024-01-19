@@ -24,7 +24,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home_Page/>}/>
             <Route path="/info" element={<Info/>}/>
-            <Route path="/booking" element={ <Booking />}/>
+            <Route path="/booking" element={ <Booking value={false} />}/>
+            <Route path="/booking/admin" element={ <Booking value ={true} />}/>
             <Route path="/booking/detail/:id" element={ <DeleteBooking/>}/>
             <Route path="/booking/payment/:id" element={<Payment/>}/>
             <Route path="/booking/rent" element={<Rent/>}/>

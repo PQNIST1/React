@@ -5,7 +5,7 @@ import './booking.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export default function Booking() {
+export default function Booking({value}) {
     const [user, setUser] = useState({});
     const [hotel, setHotel] = useState({});
 
@@ -48,16 +48,18 @@ console.log(userBookings);
 
         fetchUser();
     }, []);
+   
     return (
         <>
         <div className="booking-container container-fluid">
             <OnlyHeader/>
             <div className="booking_content container">
                 {shouldDisplayContent || user.role==='admin' ? (
-                        <BookingList value={user.role === 'admin'? userBookings: hotel} role={user.role}/>
+                        <BookingList value={user.role === 'admin'? userBookings: hotel} role={user.role} set={value}/>
                 ):(
                     <NBooking/>
                 )}      
+              
             </div>
         </div>
             

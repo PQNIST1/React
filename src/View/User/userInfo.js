@@ -18,7 +18,7 @@ const UserProfile = () => {
         if(user.role==='user'){
             window.location.href ='/info'
         } else if(user.role==='admin'){
-            window.location.href ='/info'
+            window.location.href ='/booking/admin'
         } else {
             window.location.href ='/booking'
 
