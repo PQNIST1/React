@@ -18,7 +18,7 @@ const hotelSchema = new mongoose.Schema({
     province: {
         type: String
     },
-    s_addrees:{
+    s_address:{
         type: String
     }
    },

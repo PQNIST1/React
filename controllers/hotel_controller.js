@@ -53,7 +53,8 @@ async function postHotel(req, res) {
 
  async function getHotelId (req, res)  {
     try {
-      const hotel = await Hotel.findById(req.params.id);
+      const hotel = await Hotel.findById(req.params.id).populate('address');
+      console.log(hotel);
       if (!hotel) {
         return res.status(404).json({ message: 'Không tìm thấy khách sạn' });
       }
