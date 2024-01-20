@@ -20,7 +20,7 @@
             detail: '',
             address: {
                 'province':"",
-                's_addrees':"",
+                's_address':"",
             },
             rank: '',
             extension: [{}],

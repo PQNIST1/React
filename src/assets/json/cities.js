@@ -266,7 +266,7 @@ const jsonData = [
         "code": "92"
     },
     {
-        "name": "Thừa Thiên Huế",
+        "name": "Thừa Thiên–Huế",
         "slug": "thua-thien-hue",
         "type": "tinh",
         "name_with_type": "Tỉnh Thừa Thiên Huế",
@@ -406,7 +406,7 @@ const jsonData = [
         "code": "44"
     },
     {
-        "name": "Hồ Chí Minh",
+        "name": "Hồ Chí Minh (Sài Gòn)",
         "slug": "ho-chi-minh",
         "type": "thanh-pho",
         "name_with_type": "Thành phố Hồ Chí Minh",
